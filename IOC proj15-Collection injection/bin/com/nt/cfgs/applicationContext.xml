@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Injecting set Collection [set Collection can not store duplicate value] -->
+<!--setting date class[java.lang.Date]-->
+<bean id="dt" class="java.util.Date"></bean>
+<bean id="airtel" class="com.nt.beans.Airtel">
+<property name="mobno">
+	<set>
+		<value>8509005090</value>
+		<value>9563571915</value>
+	</set>
+</property>
+
+
+<property name="date">
+    <set>
+    <ref bean="dt"/>
+    </set>
+</property>
+</bean>
+
+<!--  Collection List injection  -->
+<bean id="clg" class="com.nt.beans.College">
+ 			<constructor-arg>
+ 			<list>
+ 			<value>abhisek</value>
+ 			<value>abhirup</value>
+ 			<value>abhinash</value>
+ 			</list>
+ 			</constructor-arg>
+</bean>
+
+<!-- in ShowRoom class use array use    -->
+<bean id="sh" class="com.nt.beans.ShowRoom">
+     <property name="brands">
+     <array>
+    <value>PUMA</value>
+    <value>ADDIDAS</value>
+    <value>NIKE</value>
+    <value>KALANJEE</value>
+     </array>
+     </property>
+     <property name="priceRange">
+     <array>
+    <value>1000-2000</value>
+    <value>2000-4000</value>
+    <value>3000-7000</value>
+    <value>4000-10000</value>
+     </array>
+     </property>
+</bean>
+
+<!-- Collection map injection -->
+<bean id="fclt" class="com.nt.beans.Faculty">
+
+<!-- approach-1 -->
+<property name="faculty">
+<map>
+   <entry>
+   <key><value>HK</value></key>
+   <value>Core java</value>
+   </entry>
+   
+   <entry>
+   <key><value>nataraz</value></key>
+   <value>Adv java</value>
+   </entry>
+   
+   <entry>
+   <key><value>murali</value></key>
+   <value>oracle</value>
+   </entry>
+   
+   <entry>
+   <key><value>Roshan</value></key>
+   <value>Real-time-Exeprt(java,sql,php,css,html,javascript,c,cpp,ethical hacking,networking,compiler,cao,python,bootstap,matralize..etcs)</value>
+   </entry>
+  </map> 
+  </property>
+<!-- approach-2 -->
+ <property name="phoneNo">
+  <map>
+    <entry key="hk" value="8889456582"></entry>
+    <entry key="nataraz" value="45998761852"></entry>
+    <entry key="murali" value="23145789659"></entry>
+    <entry key="Priydarshini ka pati(roshan)" value="8888946229"></entry>
+  </map>
+ </property>
+</bean><!-- close Faculty -->
+
+    <!-- Fruit -->
+   <bean id="fruit" class="com.nt.beans.FruitStore">
+   	<property name="fruits">
+   		<props>
+   			<prop key="Apple">red</prop>
+   			<prop key="banana">yellow</prop>
+   			<prop key="watermilan">green(in side red some time white also)</prop>
+   		</props>
+   	</property>
+   </bean>
+</beans>
